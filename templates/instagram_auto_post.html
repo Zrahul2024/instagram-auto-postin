@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Instagram Post Generator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='instagram_auto_post.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AI Instagram Post Generator</h1>
+    <p>Generate AI-powered Instagram captions, hashtags and images.</p>
+
+    <label for="topic">Post Topic</label>
+    <input
+        type="text"
+        id="topic"
+        placeholder="Example: New coffee offer"
+    >
+
+    <label for="tone">Select Tone</label>
+
+    <select id="tone">
+        <option value="Professional">Professional</option>
+        <option value="Funny">Funny</option>
+        <option value="Friendly">Friendly</option>
+        <option value="Promotional">Promotional</option>
+    </select>
+
+    <button onclick="generatePost()">
+        Generate with AI
+    </button>
+
+    <p id="loading"></p>
+
+    <div class="result">
+
+        <h2>Caption</h2>
+        <p id="caption">Caption will appear here...</p>
+
+        <h2>Hashtags</h2>
+        <p id="hashtags">Hashtags will appear here...</p>
+
+        <h2>Generated Image</h2>
+
+        <div class="image-container">
+
+            <p id="imageLoading"></p>
+
+            <img
+                id="generatedImage"
+                src=""
+                alt="Generated AI Image"
+                style="display:none;"
+            >
+
+        </div>
+
+        <h2>Best Time to Post</h2>
+        <p id="bestTime">Best time will appear here...</p>
+
+        <div class="buttons">
+
+            <button onclick="copyPost()">
+                Copy Post
+            </button>
+
+            <button onclick="downloadImage()">
+                Download Image
+            </button>
+
+            <button onclick="postToInstagram()">
+                Post to Instagram
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='instagram_auto_post.js') }}"></script>
+
+</body>
+</html>
